@@ -4,8 +4,10 @@ import com.onurcanogul.stampede.redis.RedisClient;
 import com.onurcanogul.stampede.redis.RedisConfig;
 import com.onurcanogul.stampede.redis.RedisException;
 import com.onurcanogul.stampede.scenario.ExpiryBurstScenario;
+import com.onurcanogul.stampede.scenario.InvalidationRaceScenario;
 import com.onurcanogul.stampede.scenario.Scenario;
 import com.onurcanogul.stampede.scenario.SustainedTrafficScenario;
+import com.onurcanogul.stampede.scenario.TtlJitterScenario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +16,9 @@ public final class Lab {
 
     private static final List<Scenario> ALL = List.of(
             new ExpiryBurstScenario(),
-            new SustainedTrafficScenario());
+            new SustainedTrafficScenario(),
+            new TtlJitterScenario(),
+            new InvalidationRaceScenario());
 
     private Lab() {
     }
